@@ -1,2 +1,66 @@
 /* CSS Document */
+body {
+	background-color: #1487BF;
+	color: #ffffff;
+	font-size: 1.5rem;
+}
 
+.grid { 
+	display: grid;
+	width: auto;
+	grid-template: repeat(5, 1fr) / repeat(2, 1fr);
+	grid-gap: 10px 10px;
+}
+
+.title {
+	grid-column: 1 / 3;
+	grid-row: 1 / 2;
+	font-size: 3rem;
+	margin-bottom: 2rem;
+	background-color: #ffffff;
+	color: #333333;
+	padding: 1rem;
+}
+
+.subTitle {
+	grid-column: 1 / 3;
+	grid-row: 2 / 3;
+	margin-bottom: 2rem;
+	font-size: 2rem;
+	color: #333333;
+	padding: 1rem;
+}
+
+.wins {
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+	padding: 0.5rem;
+}
+
+.losses {
+	grid-column: 2 / 3;
+	grid-row: 3 / 4;
+	padding: 0.5rem;
+
+}
+
+.remainingGuesses {
+	grid-column: 1 / 2;
+	grid-row: 4 / 5;
+	padding: 0.5rem;
+}
+
+.guessesSoFar {
+	grid-column: 2 / 3;
+	grid-row: 4 / 5;
+	padding: 0.5rem;
+}
+
+.thanks {
+	margin-top: 2rem;
+	grid-column: 1 / 3;
+	grid-row: 5 / 6;
+	background-color: #ffffff;
+	color: #333333;
+	padding: 1rem;
+}
