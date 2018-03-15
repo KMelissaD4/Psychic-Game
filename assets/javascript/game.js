@@ -15,43 +15,29 @@ var guessesLeft = 9;
 var guessesSoFar = [];
 
 //this is the letter choice of the user.
-var userGuess = null;
+let userGuess = null;
 
 //generates a random letter to be guessed by user
 var randomLetter = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 
 console.log("Wins: " + wins + " Losses: " + losses + " Guesses remaining: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + randomLetter);
-
-document.onkeyup = function(event) {
 	
 	// if key press is detected, change to lowercase
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+document.onkeypress = function(event) {
+    var userGuess = event.key;
 
-	/* if guess is unique and within the alphabetLetters array, add to the array guessesSoFar.*/
-	if (guessesSoFar.indexOf(userGuess) < 0 && alphabetLetters.indexOf(userGuess) >= 0) {
-		guessesSoFar[guessesSoFar.length]=userGuess;
-		
-		// guess is unique but incorrect, decrease guessesLeft by increment of 1.
-		guessesLeft--;
-	}
+    if(userGuess === randomLetter){
+        wins++;
+    }else{
+        guessesLeft--;
+    }
 
-	/* if random selection matches user selection, record as a win. reset guessesLeft, clear guessesSoFar, randomly select a new letter. */
-	if (randomLetter === userGuess) {
-		wins++;
-		console.log("You won!");
-		guessesLeft = 9;
-		guessesSoFar = [];
-		randomLetter = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
-		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + randomLetter);
-	}
+    if(guessesLeft === 0){
+        losses++;
+    }
 
-	/* it's logged as a loss in the guessesLeft burns down to 0. reset guessesLeft, clear the guessesSoFar, randomly select a new letter. */
-	if (guessesLeft === 0) {
-		losses++;
-		console.log("You lost!");
-		guessesLeft = 9;
-		guessesSoFar = [];
-		randomLetter = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
-		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + randomLetter);
-	}
+    document.getElementById('wins').innerHTML = "Wins: " + wins;
+    document.getElementById('losses').innerHTML = "losses: " + losses;
+    document.getElementById('guessesLeft').innerHTML = "Guesses left: " + guessesLeft;
+
 };
