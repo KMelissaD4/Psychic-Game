@@ -3,6 +3,7 @@ body {
 	background-color: #1487BF;
 	color: #ffffff;
 	font-size: 1.5rem;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
 }
 
 .grid { 
@@ -41,7 +42,6 @@ body {
 	grid-column: 2 / 3;
 	grid-row: 3 / 4;
 	padding: 0.5rem;
-
 }
 
 .remainingGuesses {
