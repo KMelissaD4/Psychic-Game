@@ -36,13 +36,13 @@ document.onkeyup = function(event) {
 	}
 
 	/* if random selection matches user selection, record as a win. reset guessesLeft, clear guessesSoFar, randomly select a new letter. */
-	if (letterToBeGuessed == userGuess) {
+	if (randomLetter == userGuess) {
 		wins++;
 		console.log("You won!");
 		guessesLeft = 9;
 		guessesSoFar = [];
-		letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
-		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+		randomLetter = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
+		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + randomLetter);
 	}
 
 	/* it's logged as a loss in the guessesLeft burns down to 0. reset guessesLeft, clear the guessesSoFar, randomly select a new letter. */
@@ -51,8 +51,8 @@ document.onkeyup = function(event) {
 		console.log("You lost!");
 		guessesLeft = 9;
 		guessesSoFar = [];
-		letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
-		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+		randomLetter = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
+		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + randomLetter);
 	}
 
 	var html = "<p><h1>The Psychic Game</h1></p>" + "<p><h4>I am thinking of a letter, guess which one?</h4></p>" + "<p><h4>Wins: " + wins + "</h4></p>" + "<p><h4>Losses: " + losses + "</h4></p>" + "<p><h4>Guesses Left: " + guessesLeft + "</h4></p>" + "<p><h4>Your guesses so far: " + guessesSoFar + "</h4></p>";
