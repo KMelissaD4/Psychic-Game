@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //sets the possible key presses that will be utilized.
-let alphabetLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var alphabetLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 //sets the initial value of wins and losses.
 var wins = 0;
@@ -17,7 +17,7 @@ var guessesSoFar = [];
 //generates a random letter to be guessed by user
 var randomLetter = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 
-console.log("Wins: " + wins + " Losses: " + losses + " Guesses remaining: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + randomLetter);
+console.log("Computer picked: " + randomLetter);
 	
 	// if key press is detected, change to lowercase
 document.onkeypress = function(event) {
