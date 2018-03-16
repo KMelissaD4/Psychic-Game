@@ -14,9 +14,6 @@ var guessesLeft = 9;
 //array that logs/retains user guesses.
 var guessesSoFar = [];
 
-//this is the letter choice of the user.
-let userGuess = [];
-
 //generates a random letter to be guessed by user
 var randomLetter = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 
