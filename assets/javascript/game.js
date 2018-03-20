@@ -33,8 +33,9 @@ document.onkeypress = function(event) {
         losses++;
     }
 
-    document.getElementById('wins').innerHTML = "Wins: " + wins;
-    document.getElementById('losses').innerHTML = "losses: " + losses;
-    document.getElementById('guessesLeft').innerHTML = "Guesses left: " + guessesLeft;
+    document.getElementByClassName('wins').innerHTML = "Wins: " + wins;
+    document.getElementByClassName('losses').innerHTML = "losses: " + losses;
+    document.getElementByClassName('guessesLeft').innerHTML = "Guesses left: " + guessesLeft;
+	document.getElementsByClassName('guessesSoFar').innerHTML = "Guesses so far: " + guessesSoFar.join;
 
 };
