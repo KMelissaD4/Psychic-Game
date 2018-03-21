@@ -22,20 +22,39 @@ console.log("Computer picked: " + randomLetter);
 	// if key press is detected, change to lowercase
 document.onkeypress = function(event) {
     var userGuess = event.key;
+	
+	if(!guessesSoFar.includes(userGuess)) {
+		guessesSoFar.push(userGuess)
+	}
 
+	console.log("Computer picked: " + randomLetter);
+	
     if(userGuess === randomLetter){
         wins++;
-    }else{
+		reset();
+   
+	}else{
         guessesLeft--;
     }
 
     if(guessesLeft === 0){
         losses++;
+		reset();
     }
 
-    document.getElementById('wins').innerHTML = "Wins: " + wins;
-    document.getElementById('losses').innerHTML = "Losses: " + losses;
-    document.getElementById('guessesLeft').innerHTML = "Guesses left: " + guessesLeft;
-	document.getElementsById('guessesSoFar').innerHTML = "Guesses so far: " + guessesSoFar.join;
-
+    document.getElementById('wins').innerHTML = ("Wins: " + wins);
+    document.getElementById('losses').innerHTML = ("Losses: " + losses);
+    document.getElementById('guessesLeft').innerHTML = ("Guesses left: " + guessesLeft);
+	document.getElementById('guessesSoFar').innerHTML = ("Guesses so far: " + guessesSoFar.join(", "));
 };
+
+function reset (){
+ 	guessesLeft = 9;
+	guessesSoFar = [];
+	randomLetter = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
+	
+	document.getElementById('guessesLeft').innerHTML = ("Guesses left: " + guessesLeft);
+	document.getElementById('guessesSoFar').innerHTML = ("Guesses so far: " + guessesSoFar.join);
+};
+
+
